@@ -31,11 +31,6 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.movie-card img {
-    width: 100%;
-    height: auto;
-}
-
 footer {
     background-color: #333;
     color: #fff;

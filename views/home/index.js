@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </td>
                 <td class="moviedescription" id="${movie.id}">
                 <p>${movie.shortDescription}</p>      
-                <button class="long" id="${movie.id}"> Read More </button>
                 </td>
             </tr>
         </tbody>
@@ -32,39 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-//<a href="/movie/index.html?id=${movie.id}">Read more</a> 
 
-// document.querySelector('button').addEventListener('click', (e) => {
-//         const movieId = e.target.id;
-//         console.log(movieId)
-//         if (movieId) {
-//             fetch(`http://localhost:3000/api/movies/${movieId}`)
-//                 .then(response => response.json())
-//                 .then(movie => {
-//                     localStorage.setItem('movie', JSON.stringify(movie));
-//                     window.location.href = "../movie/index.html";
-//                 })
-//                 .catch(error => console.error('Error fetching movie:', error));
-//         }
-//     });
-
-
-// document.querySelector('')
-
-
-document.querySelectorAll('div').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const movieId = e.target.id;
-        console.log(e.target)
-        console.log("manikanth",movieId)
-        if (movieId) {
-            fetch(`http://localhost:3000/api/movies/${movieId}`)
-                .then(response => response.json())
-                .then(movie => {
-                    localStorage.setItem('movie', JSON.stringify(movie));
-                    window.location.href = "/movie/index.html";
-                })
-                .catch(error => console.error('Error fetching movie:', error));
-        }
-    });
+//fetch and store the movie etails in local storage
+document.querySelector('.movies-container').addEventListener('click', (e) => {
+    const movieId = e.target.id;
+    console.log(e.target)
+    console.log("manikanth", movieId)
+    if (movieId) {
+        fetch(`http://localhost:3000/api/movies/${movieId}`)
+            .then(response => response.json())
+            .then(movie => {
+                localStorage.setItem('movie', JSON.stringify(movie));
+                window.location.href = "/movie/index.html";
+            })
+            .catch(error => console.error('Error fetching movie:', error));
+    }
 });

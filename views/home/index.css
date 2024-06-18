@@ -35,7 +35,7 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Ensure no overflow */
+    overflow: hidden;
 }
 
 .movie-card:hover {
@@ -51,7 +51,8 @@ main {
 .movie-card img {
     width: 150px;
     height: 100%;
-    object-fit: cover; /* Ensure the image fits within the div */
+    object-fit: cover;
+    /* image fits within the div */
     border-radius: 10px;
     margin-right: 1rem;
 }
